@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>homepage</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<style>
+	.navbar{
+		height: 80px;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+	.navbar ul{
+		float: right;
+		margin-right: 20px;
+	}
+	.navbar ul li{
+		list-style: none;
+		margin: 0 8px;
+		display: inline-block;
+		line-height: 80px;
+	}
+	.navbar ul li a{
+		text-decoration: none;
+		color: white;
+		padding: 6px 13px;
+		font-size: 20px;
+		font-family: calibri;
+	}
+	.img {
+		padding: 10px;
+		height: 60px;
+		width: 180px;
+	}
+	</style>
+</head>
+<body style="background-color: #7abecc">
+	<div>
+		<nav class="navbar">
+			<img src="{% static 'img/logo.png' %}" class="img">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href='/RiskRegister/'>Report Risk page</a></li>
+				<li><a href='/contact/'>Contact</a></li>
+				<li><a href="{% url 'logout' %}">Logout</a></li>
+			</ul>
+		</nav>
+	</div>
+	<h1 style="font-family: calibri">Hello, {{request.user}}</h1>
+	<p style="font-family: calibri">Welcome to the home page. Go to the navigation bar above to go to the report risk page.</p>
+</body>
+</html>
